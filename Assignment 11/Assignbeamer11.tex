@@ -1,0 +1,63 @@
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\title{Assignment 11} 
+\author{Akhila Kumbha,CS21BTECH11031}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+
+\begin{document}
+
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+\logo{}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+\section{Question}
+\begin{frame}{Question}
+Show that if\\ $\hat{E}\cbrak{s(t+\lambda)|s(t),s(t-\tau)}=\hat{E}\cbrak{s(t+\lambda)|s(t)}$ then $R_s(\tau)=Ie^{-\alpha|\tau|}$.\\
+\end{frame}
+
+
+\section{Solution}
+\begin{frame}{Solution}
+Since 
+\begin{align}
+    \hat{E}\cbrak{s(t+\lambda)|s(t)}=a\hspace{1mm}s(t)\\
+     a=R(\lambda)/R(0)
+\end{align}
+it follows from the assumption that 
+\begin{align}
+    s(t+\lambda)-a\hspace{1mm}s(t)\perp s(t-\tau)
+\end{align}
+Hence
+\begin{align}
+    R(\lambda +\tau)=\frac{R(\lambda)}{R(0)} R(\tau)\label{eq1}
+\end{align}
+\end{frame} 
+
+\begin{frame}
+The only continuous function satisfying the above is an exponential.\\This is easily shown if we assume that $R(\lambda)$ is differentiable for $\lambda>0$.\\
+Differentiating \eqref{eq1} with respect to $\lambda$ and setting $\lambda=0
+^{+}$,we obtain 
+\begin{align}
+    R'(\tau)+\alpha R(\tau)=0\label{eq2}\\
+    \alpha=\frac{-R'(0^+)}{R(0)},\tau>0
+\end{align}
+Equation \eqref{eq2} yields $R(\tau)=Ie^{-\alpha\tau}$ for $\tau>0$.
+
+\end{frame}
+
+\end{document}
